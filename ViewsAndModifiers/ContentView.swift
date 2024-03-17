@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var state=false
+    let test1=Text("This is out side the body property")
     
     var body: some View {
         VStack {
@@ -17,9 +18,19 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+                .font(.footnote)
+            Text("Hello, world!")
+                .font(.largeTitle)
+            Text("Hello, world!")
+            
+            test1
+            
+            Text("Hello, world!")
+            
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
         .background(.yellow)
+        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
         
         Button("Button"){
             //body
@@ -27,9 +38,6 @@ struct ContentView: View {
             state.toggle()
         }
         .foregroundColor(state ? /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/ : .red)
-        
-        
-        
     }
 }
 
