@@ -10,6 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var state=false
+    @ViewBuilder var spells: some View {
+        Text("Lumos")
+        Text("Obliviate")
+    }
     let test1=Text("This is out side the body property")
     
     var body: some View {
@@ -24,6 +28,8 @@ struct ContentView: View {
             Text("Hello, world!")
             
             test1
+            
+            spells
             
             Text("Hello, world!")
             
