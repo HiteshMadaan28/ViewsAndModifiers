@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct CapsuleText: View {
+    var text: String
+
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+            .foregroundStyle(.white)
+            .background(.blue)
+            .clipShape(.capsule)
+    }
+}
+
 struct ContentView: View {
     
     @State private var state=false
@@ -31,7 +44,7 @@ struct ContentView: View {
             
             spells
             
-            Text("Hello, world!")
+            CapsuleText(text: "First")
             
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
