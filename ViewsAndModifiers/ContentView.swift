@@ -6,6 +6,16 @@
 //
 
 import SwiftUI
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundStyle(.white)
+            .padding()
+            .background(.blue)
+            .clipShape(.rect(cornerRadius: 10))
+    }
+}
 
 struct CapsuleText: View {
     var text: String
@@ -35,6 +45,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+                .modifier(Title())
                 .font(.footnote)
             Text("Hello, world!")
                 .font(.largeTitle)
