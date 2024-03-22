@@ -17,6 +17,13 @@ struct Title: ViewModifier {
     }
 }
 
+extension View{
+    func titleStyle()-> some View{
+        modifier(Title())
+    }
+    
+}
+
 struct CapsuleText: View {
     var text: String
 
@@ -49,7 +56,8 @@ struct ContentView: View {
                 .font(.footnote)
             Text("Hello, world!")
                 .font(.largeTitle)
-            Text("Hello, world!")
+            Text("Hello, world!").titleStyle()
+                
             
             test1
             
