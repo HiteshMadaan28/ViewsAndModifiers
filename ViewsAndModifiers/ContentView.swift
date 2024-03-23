@@ -37,6 +37,30 @@ struct CapsuleText: View {
     }
 }
 
+struct WaterMarked: ViewModifier{
+    var text:String
+    
+    func body(content: Content) -> some View {
+        ZStack(alignment: .bottomTrailing){
+            content
+            
+            Text(text)
+                .font(.caption)
+                .foregroundStyle(.black)
+                .padding(5)
+                .background(.ultraThinMaterial)
+        }
+    }
+}
+
+extension View{
+    
+    func waterMark(with text:String)-> some View{
+        
+        modifier(WaterMarked(text: text))
+    }
+}
+
 struct ContentView: View {
     
     @State private var state=false
@@ -69,6 +93,7 @@ struct ContentView: View {
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
         .background(.yellow)
         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        .waterMark(with: "This is Hitesh")
         
         Button("Button"){
             //body
